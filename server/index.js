@@ -11,6 +11,15 @@ const dbConfig = require("./config/db-config")
 //allows api calls to other servers
 app.use(cors())
 
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://lunch-tag-client.herokuapp.com/");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+
 //allows us to get data from POST request
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
