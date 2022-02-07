@@ -10,7 +10,6 @@ const dbConfig = require("./config/db-config")
 
 //allows api calls to other servers
 app.use(cors())
-app.use(allowCrossDomain)
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", '*');
     res.header("Access-Control-Allow-Credentials", true);
