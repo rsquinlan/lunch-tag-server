@@ -14,7 +14,8 @@ module.exports.checkDuplicate = (req, res, next) => {
         if (user){
             res.status(400).send({ message: "Username already in use" })
         }
-
-        next();
+        else{
+            next();
+        }
     })
 }
