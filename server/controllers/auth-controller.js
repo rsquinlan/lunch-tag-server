@@ -21,10 +21,12 @@ signup = (req, res) => {
 }
 
 signin = (req, res) => {
+    console.log(req.body.username)
     User.findOne({
         username: req.body.username
     })
     .exec((err, user) => {
+        console.log(user)
         if (err) {
             res.status(500).send({ message: err })
             return
